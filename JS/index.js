@@ -46,14 +46,12 @@ function displayProduct(List) {
     }
     document.getElementById("tableData").innerHTML = Box // Add new row to table
 }
-
 function ClearForm() {
     productName.value = " ";
     productPrice.value = " ";
     productCat.value = " ";
     productDesc.value = " ";
 }
-
 function deleteProduct(index) {
     productList.splice(index, 1);
     // console.log(productList);
@@ -64,7 +62,7 @@ function setToLocalStorage() {
     localStorage.setItem("List", JSON.stringify(productList))
 }
 
-// function getProductData(index) {
+function getProductData(index) {
     console.log(index)
-//     console.log(productList[index])
-// }
+    console.log(productList[index])
+}
