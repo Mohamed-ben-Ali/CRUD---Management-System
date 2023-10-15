@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD HTML</title>
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="w-50 mx-auto py-5 w-100">
+            <h1 class="mb-5 text-center ">Product Management System</h1>
+            <div class="form-group mb-2">
+                <label for="productName">ProductName</label>
+                <input type="text" id="productName" class="form-control">
+            </div>
+            <div class="form-group mb-2">
+                <label for="price">Price</label>
+                <input type="number" id="productPrice" class="form-control">
+            </div>
+            <div class="form-group mb-2">
+                <label for="productCat">ProductCat.</label>
+                <input type="text" id="productCat" class="form-control">
+            </div>
+            <div class="form-group mb-2">
+                <label for="productDesc">ProductDesc.</label>
+                <input type="text" id="productDesc" class="form-control">
+            </div>
+            <button class="btn btn-outline-info fw-bolder " onclick="AddProduct()">Add Product</button>
+        </div>
+        <div class="w-50 mx-auto pb-2 w-100 ">
+            <label for="search">Search</label>
+            <input type="text" id="search" class="form-control">
+        </div>
+        <div class="w-50 mx-auto w-100 pb-5">
+            <table class="table text-center ">
+                <thead>
+                    <th>index</th>
+                    <th>ProductName</th>
+                    <th>ProductPrice</th>
+                    <th>ProductCategory</th>
+                    <th>ProductDescription</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody id="tableData">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <!-- Js File -->
+    <script src="JS/index.js"></script>
+</body>
+
+</html>
