@@ -39,7 +39,7 @@ function displayProduct(List) {
         <td>${List[i].category}</td>
         <td>${List[i].description}</td>
 
-        <td><button class="btn btn-warning ">Update</button></td>
+        <td><button class="btn btn-warning onClick="getProductData(${i})">Update</button></td>
         <td><button class="btn btn-danger" onClick="deleteProduct(${i})">Delete</button></td>
 
     </tr>`
@@ -65,5 +65,6 @@ function setToLocalStorage() {
 }
 
 // function getProductData(index) {
+    console.log(index)
 //     console.log(productList[index])
 // }
