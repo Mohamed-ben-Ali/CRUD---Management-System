@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
 </head>
 
-<body>
+<body class="bg-dark text-white">
     <div class="container">
 
-        <div class="w-50 mx-auto py-5 w-100">
+        <div class="w-50 mx-auto pt-5 pb-4 w-100">
             <h1 class="mb-5 text-center ">Product Management System</h1>
             <div class="form-group mb-2">
                 <label for="productName">ProductName</label>
@@ -32,11 +32,12 @@
                 <label for="productDesc">ProductDesc.</label>
                 <input type="text" id="productDesc" class="form-control">
             </div>
-            <button class="btn btn-outline-info fw-bolder " onclick="AddProduct()">Add Product</button>
+            <button id="mainBut" class="btn btn-outline-info fw-bolder " onclick="AddProduct()">Add Product</button>
+            <button id="updateBut" class="btn btn-outline-warning fw-bolder d-none " onclick="updateProduct()">Update</button>
         </div>
-        <div class="w-50 mx-auto pb-2 w-100 ">
+        <div class="w-50 mx-auto pb-4 w-100 ">
             <label for="search">Search</label>
-            <input type="text" id="search" class="form-control">
+            <input type="text" id="SearchVal" oninput="search()" id="search" class="form-control">
         </div>
         <div class="w-50 mx-auto w-100 pb-5">
             <table class="table text-center ">
