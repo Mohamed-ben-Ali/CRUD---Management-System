@@ -18,20 +18,26 @@
             <h1 class="mb-5 text-center ">Product Management System</h1>
             <div class="form-group mb-2">
                 <label for="productName">ProductName</label>
-                <input type="text" id="productName" class="form-control">
+                <input type="text" onkeyup="validationProductName()" id="productName" class="form-control">
+                <p class="text-danger d-none" id="name-error">invalid product name, hint:(you must start with uppercase)</p>
             </div>
             <div class="form-group mb-2">
                 <label for="price">Price</label>
-                <input type="number" id="productPrice" class="form-control">
+                <input type="number" id="productPrice" onkeyup="validatePrice()" class="form-control">
+                <p class="text-danger d-none" id="price-error">your range from 1000 to 10000</p>
             </div>
             <div class="form-group mb-2">
                 <label for="productCat">ProductCat.</label>
-                <input type="text" id="productCat" class="form-control">
+                <input type="text" id="productCat" onkeyup="validateCategory()" class="form-control">
+                <p class="text-danger d-none" id="category-error">invalid category</p>
+
             </div>
             <div class="form-group mb-2">
                 <label for="productDesc">ProductDesc.</label>
-                <input type="text" id="productDesc" class="form-control">
+                <textarea id="productDesc" class="form-control" onkeyup="validateDescription()"></textarea>
+                <p class="text-danger d-none" id="description-error">Max 500 characters</p>
             </div>
+            
             <button id="mainBut" class="btn btn-outline-info fw-bolder " onclick="AddProduct()">Add Product</button>
             <button id="updateBut" class="btn btn-outline-warning fw-bolder d-none " onclick="updateProduct()">Update</button>
         </div>

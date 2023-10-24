@@ -14,16 +14,19 @@ if (localStorage.getItem("List") != null) {
 }
 
 function AddProduct() {
-  let product = {
-    name: productName.value,
-    price: productPrice.value,
-    category: productCat.value,
-    description: productDesc.value,
-  };
-  productList.push(product);
-  setToLocalStorage();
-  displayProduct(productList);
-  ClearForm();
+  if (validationProductName() && validatePrice() && validateCategory() && validateDescription() == true) {
+    let product = {
+      name: productName.value,
+      price: productPrice.value,
+      category: productCat.value,
+      description: productDesc.value,
+    };
+    productList.push(product);
+    setToLocalStorage();
+    displayProduct(productList);
+    ClearForm();
+  }
+  else { }
 }
 //Display data in the table
 function displayProduct(List) {
@@ -77,7 +80,7 @@ function retriveProductData(index) {
       category: productCat.value,
       description: productDesc.value,
     };
-    
+
     setToLocalStorage();
     displayProduct(productList);
     ClearForm();
@@ -94,3 +97,51 @@ function search() {
   }
   displayProduct(searchList);
 }
+
+/* Start Validation */
+function validationProductName() {
+  let regex = /^[A-Z][a-z]{3,9}$/;
+  if (regex.test(productName.value) == true) {
+    document.getElementById("name-error").classList.add("d-none");
+    return true;
+  }
+  else {
+    document.getElementById("name-error").classList.remove("d-none");
+    return false;
+  }
+}
+function validatePrice() {
+  let regex = /^(1000|10000|[1-9]\d{3})$/;
+  if (regex.test(productPrice.value) == true) {
+    document.getElementById("price-error").classList.add("d-none");
+    return true;
+  } else {
+    document.getElementById("price-error").classList.remove("d-none");
+    return false;
+  }
+}
+function validateCategory() {
+  let regex = /^(Mobile|TV|Laptop)$/i; // i flag for case-insensitive matching
+  if (regex.test(productCat.value)) {
+    // Valid category
+    document.getElementById("category-error").classList.add("d-none");
+    return true;
+  } else {
+    // Invalid category
+    document.getElementById("category-error").classList.remove("d-none");
+    return false;
+  }
+}
+
+function validateDescription() {
+  let regex = /^.{10,500}$/;
+  if (regex.test(productDesc.value)) {
+    document.getElementById("description-error").classList.add("d-none");
+    return true;
+  } else {
+    document.getElementById("description-error").classList.remove("d-none");
+    return false;
+  }
+}
+
+/* End Validation */
